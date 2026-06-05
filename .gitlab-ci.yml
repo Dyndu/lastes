@@ -1,0 +1,4 @@
+include:
+  - project: 'devopsTeam/devopstemplatefiles'
+    file: 'svcitemplate.yml'
+    ref: 'main'

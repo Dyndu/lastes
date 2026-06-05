@@ -1,0 +1,24 @@
+#### Version: 1.0.0
+trivy_image:
+  SCANNER: trivy_image
+  TARGET: "$IMAGE_LATEST"
+  REPORT_NAME: "trivy_image.json"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+trivy_image_secrets:
+  SCANNER: trivy_image_secrets
+  TARGET: "$IMAGE_LATEST"
+  REPORT_NAME: "trivy_image_secrets.json"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+grype_image:
+  SCANNER: grype_image
+  TARGET: "$IMAGE_LATEST"
+  REPORT_NAME: "grype_image.json"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+importer:
+  SO_UPLOAD: "true"
+  SO_API_BASE_URL: https://obsbk.hwegbe.com
+  SO_PRODUCT_NAME: $CI_PROJECT_NAME
+  SO_API_TOKEN: $SOB_API_TOKEN

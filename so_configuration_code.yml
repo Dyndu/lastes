@@ -1,0 +1,61 @@
+#### Version: 1.0.0
+#eslint_frontend:
+#  SCANNER: eslint
+#  RUN_DIRECTORY: "."
+#  TARGET: "."
+#  REPORT_NAME: "eslint.sarif"
+#  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+checkov:
+  SCANNER: checkov
+  RUN_DIRECTORY: "."
+  TARGET: "."
+  REPORT_NAME: checkov.sarif
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+gitleaks:
+  SCANNER: gitleaks
+  RUN_DIRECTORY: "."
+  REPORT_NAME: "gitleaks.sarif"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+kics:
+  SCANNER: kics
+  RUN_DIRECTORY: "."
+  TARGET: "."
+  REPORT_NAME: "kics.sarif"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+semgrep:
+  SCANNER: semgrep
+  RUN_DIRECTORY: "."
+  TARGET: "."
+  CONFIGURATION: "r/typescript"
+  REPORT_NAME: "semgrep.sarif"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+trivy_filesystem:
+  SCANNER: trivy_filesystem
+  RUN_DIRECTORY: "."
+  TARGET: "."
+  REPORT_NAME: "trivy_fs.json"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+trivy_misconfig:
+  SCANNER: trivy_config
+  RUN_DIRECTORY: "."
+  TARGET: "."
+  REPORT_NAME: "trivy_misconfig.json"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+trivy_secrets:
+  SCANNER: trivy_filesystem_secrets
+  RUN_DIRECTORY: "."
+  TARGET: "."
+  REPORT_NAME: "trivy_secrets.json"
+  SO_BRANCH_NAME: $CI_COMMIT_REF_NAME
+
+importer:
+  SO_UPLOAD: "true"
+  SO_API_BASE_URL: https://obsbk.hwegbe.com
+  SO_PRODUCT_NAME: $CI_PROJECT_NAME
